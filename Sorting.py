@@ -78,7 +78,7 @@ def QuickSort1(unsorted_array):
     else:
         pivot = unsorted_array[0]
         Greater = [element for element in unsorted_array[1:] if element > pivot]
-        Lesser = [element for element in unsorted_array[1:] if element < pivot]
+        Lesser = [element for element in unsorted_array[1:] if element <= pivot]
 
     return QuickSort1(Lesser) + [pivot] + QuickSort1(Greater)
 
@@ -93,7 +93,7 @@ def QuickSort2(unsorted_array):
     else:
         pivot = unsorted_array[-1]
         Greater = [element for element in unsorted_array[:-1] if element > pivot]
-        Lesser = [element for element in unsorted_array[:-1] if element < pivot]
+        Lesser = [element for element in unsorted_array[:-1] if element <= pivot]
 
     return QuickSort2(Lesser) + [pivot] + QuickSort2(Greater)
 
