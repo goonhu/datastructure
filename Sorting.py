@@ -39,6 +39,35 @@ def selection_sort(unsorted_list, ascending = True):
 
     return unsorted_list
 
+
+def MergetSort(unsorted_list, asceding = True):
+
+    unsorted_list = unsorted_list.copy()
+    mid = int((len(unsorted_list)/2))
+
+
+    if len(unsorted_list) > 1:
+
+        left = unsorted_list[:mid]
+        right = unsorted_list[mid:]
+
+        MergetSort(left)
+        MergetSort(right)
+
+        i = j = k = 0
+
+        while i < len(left) and j < len(right):
+
+            if left[i] < right[j]:
+                unsorted_list[k] = left[i]
+                i += 1
+            else:
+                unsorted_list[k] = right[j]
+                j += 1
+            k += 1
+    
+    return unsorted_list
+
 if __name__ == "__main__":
 
     array = [5, 1, 4, 2, 8]
